@@ -1,4 +1,4 @@
-const ws = new WebSocket("ws://localhost:8080")
+const ws = new WebSocket("https://webrtc-carlos.herokuapp.com/")
 ws.onopen = function() {
     console.log('Connected to signaling server')
 }
