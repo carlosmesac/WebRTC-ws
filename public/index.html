@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC-WS</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div id="login">
+        <label for="username">Login</label>
+        <input id="username" placeholder="login id" required='true' autofocus='true'>
+        <button id="login">Login</button>
+    </div>
+    <div id="call">
+        <video id='local' autoplay></video>
+        <video id='remote' autoplay></video>
+    </div>
+    <div id="user-call">
+        <input id="username-to-call" placeholder="Username to call" />
+        <button id="call">Call</button>
+        <button id="close-call" style="visibility: hidden;">Close call</button>
+    </div>
+    <script src="client.js"></script>
+
+</body>
+
+</html>
