@@ -241,3 +241,16 @@ app.listen(8080, () => {
     console.log('Listening on port 8080')
 })
 ```
+
+## Implemntación Heroku
+
+Para hacer la comprobación del funcionamiento con https, vamos a utilizar heroku. Para ello vamos a necesitar:
+
+1. Crear el archivo ``Procfile`` en el directorio raíz, en el cual incluimos lo siguiente
+
+```shell
+web : node server.js
+```
+
+2. Creamos un script en el archivo ``package.json`` 
+

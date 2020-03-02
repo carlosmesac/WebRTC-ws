@@ -67,7 +67,7 @@ const handleLogin = async success => {
                 audio: true
             })
         } catch (error) {
-            alert('${error.name}')
+            alert(`${error.name}`)
             console.error(error)
         }
         document.querySelector('video#local').srcObject = localStream
