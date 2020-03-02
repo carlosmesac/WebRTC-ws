@@ -75,7 +75,8 @@ const handleLogin = async success => {
         //usando Servidores STUN publicos de google
         const configuration = {
             iceServers: [{
-                urls: 'stun:stun2.1.google.com:19302'
+                urls: 'stun:stun2.1.google.com:19302',
+                'stun:stun.services.mozilla.com:3478'
             }]
         }
 
