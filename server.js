@@ -99,7 +99,7 @@ app.ws('/', (ws, req) => {
 const sendTo = (ws, message) => {
     ws.send(JSON.stringify(message))
 }
-app.use(express.static('../public'))
+app.use(express.static('./public'))
 
 
 app.listen(PORT, () => {
