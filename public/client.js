@@ -74,10 +74,9 @@ const handleLogin = async success => {
 
         //usando Servidores STUN publicos de google
         const configuration = {
-            iceServers: [{
-                urls: 'stun:stun2.1.google.com:19302',
-                'stun:stun.services.mozilla.com:3478'
-            }]
+            iceServers: [{ 'urls': 'stun:stun.services.mozilla.com' },
+                { 'urls': 'stun:stun.l.google.com:19302' }
+            ]
         }
 
         connection = new RTCPeerConnection(configuration)
