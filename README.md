@@ -1,6 +1,6 @@
 ## Creación de una APP de WebRTC con NodeJS y ws
 
-En este proyecyo se pretende implementar una aplicación para webRTC implementando websocket como medio de señalización.
+En este proyecto se pretende implementar una aplicación para webRTC implementando websocket como medio de señalización.
 
 A continuación se irán explicando los pasos a seguir para el desarrollo de la aplicación.
 
