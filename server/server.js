@@ -5,6 +5,8 @@ var expressWs = require('express-ws')(app)
 const users = {}
 const PORT = process.env.PORT || 8080
 
+app.use(express.static('../public'))
+
 app.ws('/', (ws, req) => {
     console.log('User connected')
 
@@ -100,7 +102,6 @@ const sendTo = (ws, message) => {
 }
 
 
-app.use(express.static('../public'))
 app.listen(PORT, () => {
     console.log('Listening on port 8080')
 })
