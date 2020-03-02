@@ -199,14 +199,14 @@ document.querySelector('button#close-call').addEventListener('click', () => {
 
 En el lado del servidor debemos manejar este caso.
 
-´´´JavaScript
+```JavaScript
   console.log('Disconnecting from', data.otherUsername)
   users[data.otherUsername].otherUsername = null
   if (users[data.otherUsername] != null) {
     sendTo(users[data.otherUsername], { type: 'close' })
   }
   break
-´´´
+```
 
 Así como en el lado del cliente.
 
