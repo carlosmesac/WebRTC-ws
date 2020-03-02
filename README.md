@@ -254,3 +254,9 @@ web : node server.js
 
 2. Creamos un script en el archivo ``package.json`` 
 
+```JSON
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+```
