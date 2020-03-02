@@ -260,3 +260,18 @@ web : node server.js
         "start": "node server.js"
     },
 ```
+
+3. Necesitamos crear una app en [Heroku](https://www.heroku.com/) y seguimos los pasos para asociar la aplicación con Heroku.
+4. Realizamos modificaciones en el lado del cliente, para poder acceder a la web.
+```JavaScript
+const ws = new WebSocket("wss://webrtc-carlos.herokuapp.com/")
+```
+5. Realizamos modificaciones en el lado del servidor.(Necesitamos que el server.js se encuentre en el directorio raíz)
+```JavaScript
+const PORT = process.env.PORT || 8080
+```
+```JavaScript
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`)
+})
+```
