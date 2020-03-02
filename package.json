@@ -1,17 +1,18 @@
 {
-  "name": "webrtc-ws",
-  "version": "1.0.0",
-  "description": "En esta ocasión en lugar de usar la API de WebRTC, vamos a utilizar otra una librería que permite simplificarla, [PeerJS](https://peerjs.com/)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-ws": "^4.0.0",
-    "ws": "^7.2.1"
-  },
-  "devDependencies": {}
+    "name": "webrtc-ws",
+    "version": "1.0.0",
+    "description": "En esta ocasión en lugar de usar la API de WebRTC, vamos a utilizar otra una librería que permite simplificarla, [PeerJS](https://peerjs.com/)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./server/server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-ws": "^4.0.0",
+        "ws": "^7.2.1"
+    },
+    "devDependencies": {}
 }
