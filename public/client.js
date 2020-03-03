@@ -130,6 +130,8 @@ const handleClose = () => {
         connection.close()
         connection.onicecandidate = null
         connection.onaddstream = null
+        location.reload()
+
     }
     //finalizar llamada
 
@@ -139,7 +141,6 @@ document.querySelector('button#close-call').addEventListener('click', () => {
     })
 
     handleClose()
-    location.reload()
 })
 
 document.querySelector('button#call').addEventListener('click', () => {
