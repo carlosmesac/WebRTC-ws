@@ -55,7 +55,6 @@ ws.onmessage = msg => {
 const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
-        return
     } else {
         document.querySelector('h1#user').innerHTML = 'Current username: ' + username
         document.querySelector('div#login').style.display = 'none'
