@@ -18,7 +18,7 @@ app.ws('/', (ws, req) => {
             console.error('Invalid JSON', error)
             data = {}
         }
-
+        console.log('personas en el array', users.entries)
         switch (data.type) {
             case 'login':
                 console.log('User logged', data.username)
