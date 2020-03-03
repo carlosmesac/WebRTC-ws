@@ -1,6 +1,6 @@
 ## Creación de una APP de WebRTC con NodeJS y ws
 
-En este proyecyo se pretende implementar una aplicación para webRTC implementando websocket como medio de señalización.
+En este proyecto se pretende implementar una aplicación para webRTC implementando websocket como medio de señalización.
 
 A continuación se irán explicando los pasos a seguir para el desarrollo de la aplicación.
 
@@ -259,4 +259,19 @@ web : node server.js
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js"
     },
+```
+
+3. Necesitamos crear una app en [Heroku](https://www.heroku.com/) y seguimos los pasos para asociar la aplicación con Heroku.
+4. Realizamos modificaciones en el lado del cliente, para poder acceder a la web.
+```JavaScript
+const ws = new WebSocket("wss://webrtc-carlos.herokuapp.com/")
+```
+5. Realizamos modificaciones en el lado del servidor.(Necesitamos que el server.js se encuentre en el directorio raíz)
+```JavaScript
+const PORT = process.env.PORT || 8080
+```
+```JavaScript
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`)
+})
 ```
