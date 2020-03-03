@@ -128,6 +128,7 @@ const handleClose = () => {
         connection.close()
         connection.onicecandidate = null
         connection.onaddstream = null
+        alert('La conexión ha finalizado')
         location.reload()
 
     }
