@@ -6,20 +6,16 @@ ws.onerror = err => {
     console.error(err)
 }
 let connection = null
+let username = null
 let name = null
 let otherUsername = null
 document.querySelector('button#login').addEventListener('click', event => {
     username = document.querySelector('input#username').value
-
     if (username.length <= 0) {
         alert('please enter an username')
         return
-    } else {
-        document.querySelector('video#local').style.display = 'block';
-        document.querySelector('video#remote').style.display = 'block';
-        document.querySelector('div#user-call').style.display = 'block';
-
     }
+
 
     sendMessage({
         type: 'login',
@@ -56,6 +52,10 @@ const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
     } else {
+        document.querySelector('video#local').style.display = 'block';
+        document.querySelector('video#remote').style.display = 'block';
+        document.querySelector('div#user-call').style.display = 'block';
+        document.querySelector('h1#user').innerHTML = 'Current username: ' + username
         document.querySelector('div#login').style.display = 'none'
         document.querySelector('div#call').style.display = 'block'
 
@@ -119,15 +119,18 @@ const handleAnswer = answer => {
 
 const handelCandidate = candidate => {
     connection.addIceCandidate(new RTCIceCandidate(candidate))
+    document.querySelector('button#close-call').style.visibility = 'visible'
 }
 
 const handleClose = () => {
         otherUsername = null
         document.querySelector('video#remote').srcObjetc = null
-        document.querySelector('button#close-call').style.visibility = 'hidden'
         connection.close()
         connection.onicecandidate = null
         connection.onaddstream = null
+        console.log('Conexion finalizada')
+        location.reload()
+
     }
     //finalizar llamada
 
@@ -137,7 +140,6 @@ document.querySelector('button#close-call').addEventListener('click', () => {
     })
 
     handleClose()
-    location.reload()
 })
 
 document.querySelector('button#call').addEventListener('click', () => {
@@ -145,10 +147,7 @@ document.querySelector('button#call').addEventListener('click', () => {
     if (callToUsername.length === 0) {
         alert('Enter a username')
         return
-    } else {
-        document.querySelector('button#close-call').style.visibility = 'visible'
     }
-
     otherUsername = callToUsername
 
     connection.createOffer(

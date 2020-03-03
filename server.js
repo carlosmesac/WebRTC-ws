@@ -2,7 +2,7 @@ const WebSocket = require('ws')
 var express = require('express')
 var app = express()
 var expressWs = require('express-ws')(app)
-const users = {}
+const users = []
 const PORT = process.env.PORT || 8080
 
 
@@ -14,6 +14,7 @@ app.ws('/', (ws, req) => {
 
         try {
             data = JSON.parse(message)
+            console.log('otherUsername', data.otherUsername)
         } catch (error) {
             console.error('Invalid JSON', error)
             data = {}

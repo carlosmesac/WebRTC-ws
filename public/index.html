@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebRTC-WS</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+
 </head>
 
 <body>
+    <div>
+        <h1 id="user"></h1>
+    </div>
     <div id="login">
         <label for="username">Login</label>
         <input id="username" placeholder="login id" required='true' autofocus='true'>
         <button id="login">Login</button>
     </div>
     <div id="call">
-        <video id='local' autoplay controls></video>
+        <video id='local' autoplay controls muted></video>
         <video id='remote' autoplay controls></video>
     </div>
     <div id="user-call">
