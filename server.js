@@ -32,7 +32,7 @@ app.ws('/', (ws, req) => {
                 break
             case 'offer':
                 console.log('Sending offer to: ', data.otherUsername)
-                if (users[data.otherUsername] != null) {
+                if (users.includes(data.otherUsername)) {
                     ws.otherUsername = data.otherUsername
                     sendTo(users[data.otherUsername], {
                         type: 'offer',
