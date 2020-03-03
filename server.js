@@ -2,7 +2,7 @@ const WebSocket = require('ws')
 var express = require('express')
 var app = express()
 var expressWs = require('express-ws')(app)
-const users = {}
+const users = []
 const PORT = process.env.PORT || 8080
 
 

@@ -10,7 +10,6 @@ let name = null
 let otherUsername = null
 document.querySelector('button#login').addEventListener('click', event => {
     username = document.querySelector('input#username').value
-
     if (username.length <= 0) {
         alert('please enter an username')
         return
