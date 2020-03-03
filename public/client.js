@@ -120,7 +120,7 @@ const handleAnswer = answer => {
 
 const handelCandidate = candidate => {
     connection.addIceCandidate(new RTCIceCandidate(candidate))
-    document.querySelector('button#close-call').style.visibility = 'visibles'
+    document.querySelector('button#close-call').style.visibility = 'visible'
 }
 
 const handleClose = () => {
