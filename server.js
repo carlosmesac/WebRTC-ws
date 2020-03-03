@@ -2,7 +2,7 @@ const WebSocket = require('ws')
 var express = require('express')
 var app = express()
 var expressWs = require('express-ws')(app)
-const users = []
+const users = {}
 const PORT = process.env.PORT || 8080
 
 
@@ -18,7 +18,7 @@ app.ws('/', (ws, req) => {
             console.error('Invalid JSON', error)
             data = {}
         }
-        console.log('personas en el array', users.entries)
+
         switch (data.type) {
             case 'login':
                 console.log('User logged', data.username)
@@ -32,7 +32,7 @@ app.ws('/', (ws, req) => {
                 break
             case 'offer':
                 console.log('Sending offer to: ', data.otherUsername)
-                if (users.includes(data.otherUsername)) {
+                if (users[data.otherUsername] != null) {
                     ws.otherUsername = data.otherUsername
                     sendTo(users[data.otherUsername], {
                         type: 'offer',
