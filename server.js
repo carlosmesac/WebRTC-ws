@@ -14,6 +14,7 @@ app.ws('/', (ws, req) => {
 
         try {
             data = JSON.parse(message)
+            console.log('otherUsername', data.otherUsername)
         } catch (error) {
             console.error('Invalid JSON', error)
             data = {}
