@@ -57,7 +57,7 @@ const handleLogin = async success => {
         alert('Username already taken')
         return
     } else {
-        document.querySelector('h1#user').innerHTML = username
+        document.querySelector('h1#user').innerHTML = 'Current username: ' + username
         document.querySelector('div#login').style.display = 'none'
         document.querySelector('div#call').style.display = 'block'
 
