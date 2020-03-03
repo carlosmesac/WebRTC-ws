@@ -6,6 +6,7 @@ ws.onerror = err => {
     console.error(err)
 }
 let connection = null
+let username = null
 let name = null
 let otherUsername = null
 document.querySelector('button#login').addEventListener('click', event => {
@@ -56,6 +57,7 @@ const handleLogin = async success => {
         alert('Username already taken')
         return
     } else {
+        document.querySelector('h1#user').innerHTML = username
         document.querySelector('div#login').style.display = 'none'
         document.querySelector('div#call').style.display = 'block'
 
