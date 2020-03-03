@@ -14,12 +14,8 @@ document.querySelector('button#login').addEventListener('click', event => {
     if (username.length <= 0) {
         alert('please enter an username')
         return
-    } else {
-        document.querySelector('video#local').style.display = 'block';
-        document.querySelector('video#remote').style.display = 'block';
-        document.querySelector('div#user-call').style.display = 'block';
-
     }
+
 
     sendMessage({
         type: 'login',
@@ -56,6 +52,9 @@ const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
     } else {
+        document.querySelector('video#local').style.display = 'block';
+        document.querySelector('video#remote').style.display = 'block';
+        document.querySelector('div#user-call').style.display = 'block';
         document.querySelector('h1#user').innerHTML = 'Current username: ' + username
         document.querySelector('div#login').style.display = 'none'
         document.querySelector('div#call').style.display = 'block'
