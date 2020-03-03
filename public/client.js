@@ -145,10 +145,7 @@ document.querySelector('button#call').addEventListener('click', () => {
     if (callToUsername.length === 0) {
         alert('Enter a username')
         return
-    } else {
-        document.querySelector('button#close-call').style.visibility = 'visible'
     }
-
     otherUsername = callToUsername
 
     connection.createOffer(
