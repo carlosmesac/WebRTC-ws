@@ -126,7 +126,6 @@ const handelCandidate = candidate => {
 const handleClose = () => {
         otherUsername = null
         document.querySelector('video#remote').srcObjetc = null
-        document.querySelector('button#close-call').style.visibility = 'hidden'
         connection.close()
         connection.onicecandidate = null
         connection.onaddstream = null
