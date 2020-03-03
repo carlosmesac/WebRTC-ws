@@ -55,6 +55,7 @@ ws.onmessage = msg => {
 const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
+        return
     } else {
         document.querySelector('div#login').style.display = 'none'
         document.querySelector('div#call').style.display = 'block'
@@ -119,6 +120,7 @@ const handleAnswer = answer => {
 
 const handelCandidate = candidate => {
     connection.addIceCandidate(new RTCIceCandidate(candidate))
+    document.querySelector('button#close-call').style.visibility = 'visibles'
 }
 
 const handleClose = () => {
