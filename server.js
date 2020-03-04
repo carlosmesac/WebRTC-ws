@@ -28,6 +28,7 @@ app.ws('/', (ws, req) => {
                 } else {
                     users[data.username] = ws
                     ws.username = data.username
+                    username.push(data.username)
                     sendTo(ws, { type: 'login', success: true, users: users })
                 }
                 break
