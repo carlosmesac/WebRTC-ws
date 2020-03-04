@@ -101,7 +101,8 @@ app.ws('/', (ws, req) => {
                     sendTo(users[ws.otherUsername], { type: 'close' })
                 }
             }
-            removeArrayItem(users, username)
+            if (username != null)
+                removeArrayItem(users, username)
 
         }
     })
