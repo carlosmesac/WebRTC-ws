@@ -62,7 +62,8 @@ const displayArrayUsers = (users) => {
     var i, text
     text = '<ul>'
     for (i = 0; i < usersL; i++) {
-        text += '<li>' + users[i] + '</li>'
+        if (users[i] != null)
+            text += '<li>' + users[i] + '</li>'
     }
     text += '</ul>'
 

@@ -82,10 +82,17 @@ app.ws('/', (ws, req) => {
         }
     })
 
+    const removeArrayItem = (arr, item) => {
+        var i = arr.indexOf(item);
+
+        if (i !== -1) {
+            arr.splice(i, 1);
+        }
+    }
+
     ws.on('close', () => {
         if (ws.username) {
-            delete users[ws.username]
-
+            removeArrayItem(users, ws.username)
             if (ws.otherUsername) {
                 console.log('Disconnecting from ', ws.otherUsername)
                 users[ws.otherUsername].otherUsername = null
