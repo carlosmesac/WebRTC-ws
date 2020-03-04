@@ -29,7 +29,8 @@ ws.onmessage = msg => {
     switch (data.type) {
 
         case 'login':
-            handleLogin(data.success, data.users)
+            handleLogin(data.success)
+            displayArrayUsers(data.users)
             break;
         case 'offer':
             handleOffer(data.offer, data.username)
@@ -68,11 +69,10 @@ const displayArrayUsers = (users) => {
     document.querySelector('p#users-list').innerHTML = text
 
 }
-const handleLogin = (success, users) => {
+const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
     } else {
-        displayArrayUsers(users)
         loginSuccessfull()
 
         let localStream
