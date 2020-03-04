@@ -26,6 +26,8 @@ document.querySelector('button#login').addEventListener('click', event => {
 ws.onmessage = msg => {
     console.log('got message', msg.data)
     const data = JSON.parse(msg.data)
+    console.log('usuarios', data.users)
+
     switch (data.type) {
 
         case 'login':

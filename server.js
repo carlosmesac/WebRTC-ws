@@ -28,7 +28,6 @@ app.ws('/', (ws, req) => {
                 } else {
                     users[data.username] = ws
                     ws.username = data.username
-                    users.push(data.username)
                     sendTo(ws, { type: 'login', success: true, users: users })
                 }
                 break
@@ -92,7 +91,8 @@ app.ws('/', (ws, req) => {
 
     ws.on('close', () => {
         if (ws.username) {
-            removeArrayItem(users, ws.username)
+            delete users[ws.username]
+
             if (ws.otherUsername) {
                 console.log('Disconnecting from ', ws.otherUsername)
                 users[ws.otherUsername].otherUsername = null
@@ -101,6 +101,8 @@ app.ws('/', (ws, req) => {
                     sendTo(users[ws.otherUsername], { type: 'close' })
                 }
             }
+            removeArrayItem(users, username)
+
         }
     })
 })
