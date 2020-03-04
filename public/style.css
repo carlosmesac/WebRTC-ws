@@ -33,10 +33,3 @@ video#remote {
     height: 500px;
     display: none;
 }
-
-aside#list {
-    position: fixed;
-    right: 0;
-    border: 1px;
-    border-radius: 15px;
-}
