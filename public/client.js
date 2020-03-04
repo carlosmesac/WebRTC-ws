@@ -29,7 +29,7 @@ ws.onmessage = msg => {
     switch (data.type) {
 
         case 'login':
-            handleLogin(data.success)
+            handleLogin(data.success, data.users)
             break;
         case 'offer':
             handleOffer(data.offer, data.username)
@@ -56,12 +56,23 @@ const loginSuccessfull = () => {
     document.querySelector('div#login').style.display = 'none'
     document.querySelector('div#call').style.display = 'block'
 }
+const displayArrayUsers = (users) => {
+    var usersL = users.length
+    var i, text
+    text = '<ul>'
+    for (i = 0; i < usersL; i++) {
+        text += '<li>' + users[i] + '</li>'
+    }
+    text += '</ul>'
 
-const handleLogin = async success => {
+    document.querySelector('p#users-list').innerHTML = text
+
+}
+const handleLogin = (success, users) => {
     if (success === false) {
         alert('Username already taken')
     } else {
-
+        displayArrayUsers(users)
         loginSuccessfull()
 
         let localStream
