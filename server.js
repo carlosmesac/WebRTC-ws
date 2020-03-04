@@ -24,11 +24,11 @@ app.ws('/', (ws, req) => {
             case 'login':
                 console.log('User logged', data.username)
                 if (users[data.username]) {
-                    sendTo(ws, { type: 'login', success: false })
+                    sendTo(ws, { type: 'login', success: false, users: users.forEach.toString })
                 } else {
                     users[data.username] = ws
                     ws.username = data.username
-                    sendTo(ws, { type: 'login', success: true })
+                    sendTo(ws, { type: 'login', success: true, users: users.forEach.toString })
                 }
                 break
             case 'offer':

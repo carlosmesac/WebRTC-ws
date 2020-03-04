@@ -211,6 +211,7 @@ En el lado del servidor debemos manejar este caso.
 Así como en el lado del cliente.
 
 Debido a que los métodos están desactualizados hay que corregir los siguientes campos:
+
 1. Primero deemos añadir algunas librerias más
 
 ```shell
@@ -262,14 +263,19 @@ web : node server.js
 ```
 
 3. Necesitamos crear una app en [Heroku](https://www.heroku.com/) y seguimos los pasos para asociar la aplicación con Heroku.
+
 4. Realizamos modificaciones en el lado del cliente, para poder acceder a la web.
+
 ```JavaScript
 const ws = new WebSocket("wss://webrtc-carlos.herokuapp.com/")
 ```
+
 5. Realizamos modificaciones en el lado del servidor.(Necesitamos que el server.js se encuentre en el directorio raíz)
+
 ```JavaScript
 const PORT = process.env.PORT || 8080
 ```
+
 ```JavaScript
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

@@ -27,6 +27,7 @@ ws.onmessage = msg => {
     console.log('got message', msg.data)
     const data = JSON.parse(msg.data)
     switch (data.type) {
+
         case 'login':
             handleLogin(data.success)
             break;
@@ -47,17 +48,21 @@ ws.onmessage = msg => {
     }
 }
 
+const loginSuccessfull = () => {
+    document.querySelector('video#local').style.display = 'block';
+    document.querySelector('video#remote').style.display = 'block';
+    document.querySelector('div#user-call').style.display = 'block';
+    document.querySelector('h1#user').innerHTML = 'Current username: ' + username
+    document.querySelector('div#login').style.display = 'none'
+    document.querySelector('div#call').style.display = 'block'
+}
 
 const handleLogin = async success => {
     if (success === false) {
         alert('Username already taken')
     } else {
-        document.querySelector('video#local').style.display = 'block';
-        document.querySelector('video#remote').style.display = 'block';
-        document.querySelector('div#user-call').style.display = 'block';
-        document.querySelector('h1#user').innerHTML = 'Current username: ' + username
-        document.querySelector('div#login').style.display = 'none'
-        document.querySelector('div#call').style.display = 'block'
+
+        loginSuccessfull()
 
         let localStream
 
@@ -165,6 +170,7 @@ document.querySelector('button#call').addEventListener('click', () => {
         }
     )
 })
+
 const sendMessage = message => {
     if (otherUsername) {
         message.otherUsername = otherUsername
